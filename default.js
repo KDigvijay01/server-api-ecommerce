@@ -5,8 +5,10 @@ import Product from "./model/product-schema.js";
 
 const DefaultData=async()=>{
     try{
-        await Product.deleteMany();
-        await Product.insertMany(products);
+        // await Product.deleteMany();
+        // Product.deleteMany();
+        // await Product.insertMany(products);
+        
         console.log("Data, imported successfully");
 
     }

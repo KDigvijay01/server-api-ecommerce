@@ -32,8 +32,8 @@ export const addStripePaymentGateway=async(req, res)=>{
             payment_method_types: ['card'],
             line_items: [...lineItems],
             mode: 'payment',
-            success_url: `${window.location.origin}`,
-            cancel_url: `${window.location.origin}`,
+            success_url: ``,
+            cancel_url: ``,
           });
           console.log("session in payment", session);
       

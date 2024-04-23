@@ -1,11 +1,11 @@
 import Product from "../model/product-schema.js"
 
-
+import { products } from "../constants/data.js";
 
 
 export const getProducts=async (request, response)=>{
     try{
-        const products= await Product.find({});
+        // const products= await Product.find({});
         response.status(200).json(products);
 
     }

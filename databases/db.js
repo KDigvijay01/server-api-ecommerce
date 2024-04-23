@@ -6,7 +6,7 @@ dotenv.config();
 export const Connection=async()=>{
     const URL=`${process.env.MONGO_URL}/?retryWrites=true&w=majority`;
     try{
-        await mongoose.connect(URL, {useUnifiedTopology: true, useNewUrlParser: true})
+        await mongoose.connect(URL, {useUnifiedTopology: true, useNewUrlParser: true,})
         console.log("Database connected successfully");
     }
     catch(err){
