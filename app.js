@@ -5,11 +5,11 @@ import DefaultData from "./default.js";
 import router from "./routes/route.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import path from "path"; 
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// import path from "path"; 
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 
 
@@ -24,10 +24,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', router);
 
 
-app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "client", "build")));
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+// app.get("/", (req, res) => {
+//     app.use(express.static(path.resolve(__dirname, "client", "build")));
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
   
 
 
