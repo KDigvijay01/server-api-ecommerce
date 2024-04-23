@@ -5,10 +5,13 @@ import Product from "./model/product-schema.js";
 
 const DefaultData=async()=>{
     try{
-         const products = await Product.find({}); // Find all documents to delete
-        for (const product of products) {
-            await product.deleteOne(); // Delete each document individually
-        }
+        // const products = await Product.find({}); // Find all documents to delete
+        // for (const product of products) {
+        //     await product.deleteOne(); // Delete each document individually
+        // }
+
+        const result = await Product.collection.deleteMany({});
+        
         await Product.insertMany(products);
         
         console.log("Data, imported successfully");
