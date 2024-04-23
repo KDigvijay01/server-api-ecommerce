@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
-import mongoose from "mongoose";
-
 dotenv.config();
 
+
+import mongoose from "mongoose";
+
 export const Connection=async()=>{
-    const URL=`${process.env.MONGO_URL}/?retryWrites=true&w=majority`;
+    const URL=`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ecomcluster.fnhso0c.mongodb.net/?retryWrites=true&w=majority`;
     try{
         await mongoose.connect(URL, {useUnifiedTopology: true, useNewUrlParser: true,})
         console.log("Database connected successfully");
