@@ -5,7 +5,10 @@ import Product from "./model/product-schema.js";
 
 const DefaultData=async()=>{
     try{
-        await Product.deleteMany({}, { timeout: 30000 });;
+         const products = await Product.find({}); // Find all documents to delete
+        for (const product of products) {
+            await product.deleteOne(); // Delete each document individually
+        }
         await Product.insertMany(products);
         
         console.log("Data, imported successfully");
