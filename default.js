@@ -5,7 +5,7 @@ import Product from "./model/product-schema.js";
 
 const DefaultData=async()=>{
     try{
-        await Product.deleteMany({});
+        await Product.deleteMany({}, { timeout: 30000 });;
         await Product.insertMany(products);
         
         console.log("Data, imported successfully");
