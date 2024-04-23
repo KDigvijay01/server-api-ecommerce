@@ -1,13 +1,18 @@
 import dotenv from "dotenv";
+dotenv.config();
+
+
 
 import Stripe from "stripe";
-dotenv.config();
+
+
+console.log("process.env.STRIPE_SECRET_KEY", process.env.STRIPE_SECRET_KEY)
 
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 
-
+console.log(stripe);
 
 
 export const addStripePaymentGateway=async(req, res)=>{
@@ -32,8 +37,8 @@ export const addStripePaymentGateway=async(req, res)=>{
             payment_method_types: ['card'],
             line_items: [...lineItems],
             mode: 'payment',
-            success_url: ``,
-            cancel_url: ``,
+            success_url: `https://client-flipcart-clone-8g86.vercel.app/paymentSuccess`,
+            cancel_url: `https://client-flipcart-clone-8g86.vercel.app/paymentFailed`,
           });
           console.log("session in payment", session);
       
