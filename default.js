@@ -29,7 +29,7 @@ const DefaultData=async()=>{
                     await deleteDocumentById(product._id);
         } 
         }
-        
+
         await Product.insertMany(products);
         
         console.log("Data, imported successfully");
